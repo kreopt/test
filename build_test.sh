@@ -5,8 +5,8 @@ CI_CACHE_DIR="/home/ubuntu/aptcache"
 fi;
 
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y && \
-sudo apt-get -o dir::cache::archives=${CI_CACHE_DIR} update -y && \
-sudo apt-get -o dir::cache::archives=${CI_CACHE_DIR} install cmake gcc-6 g++-6 -y && \
+sudo apt-get update -y && \
+sudo apt-get install cmake gcc-6 g++-6 -y && \
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6 && \
 sudo update-alternatives --config gcc
 
