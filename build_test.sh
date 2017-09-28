@@ -14,4 +14,5 @@ rm -r test_build
 mkdir test_build
 cd test_build
 cmake ../ -DBUILD_TEST=ON
+make
 ./testTest
