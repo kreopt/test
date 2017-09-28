@@ -1,0 +1,18 @@
+machine:
+  node:
+    version: 6.1.0
+dependencies:
+  cache_directories:
+    - "/home/ubuntu/aptcache"
+    - "/home/ubuntu/fw"
+test:
+  override:
+    - /bin/bash ./build_test.sh
+
+deployment:
+  compile:
+    branch: [master]
+
+general:
+  artifacts:
+    - "test_build"
