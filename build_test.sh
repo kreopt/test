@@ -10,8 +10,9 @@ sudo apt-get -o dir::cache::archives=${CI_CACHE_DIR} update -y && \
 sudo apt-get -o dir::cache::archives=${CI_CACHE_DIR} install cmake gcc-6 g++-6 -y && \
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 && \
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 60 && \
-sudo update-alternatives --config gcc && \
-sudo update-alternatives --config g++
+sudo update-alternatives --set gcc /usr/bin/gcc-6 && \
+sudo update-alternatives --set g++ /usr/bin/g++-6
+
 
 
 rm -r test_build
